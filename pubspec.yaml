@@ -18,6 +18,7 @@ dependencies:
   get:
   firebase_core: ^1.22.0
   # firebase_core: ^2.1.0
+  # firebase_ml_vision: ^0.11.0
   firebase_database: ^9.1.4
   firebase_auth: ^3.8.0
   cloud_firestore: ^3.4.7
