@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -113,7 +112,7 @@ class OrderTrackingPageState extends State<OrderTrackingPage2> {
     Geolocator.getCurrentPosition().then((currLocation) {
       setState(() {
         currentLatLng =
-            new LatLng(currLocation.latitude, currLocation.longitude);
+            LatLng(currLocation.latitude, currLocation.longitude);
       });
     });
 

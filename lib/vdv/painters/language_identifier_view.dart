@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:google_mlkit_language_id/google_mlkit_language_id.dart';
 
 class LanguageIdentifierView extends StatefulWidget {
+  const LanguageIdentifierView({super.key});
+
   @override
   State<LanguageIdentifierView> createState() => _LanguageIdentifierViewState();
 }
@@ -22,7 +24,7 @@ class _LanguageIdentifierViewState extends State<LanguageIdentifierView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Language Identification')),
+      appBar: AppBar(title: const Text('Language Identification')),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Padding(
           padding: const EdgeInsets.all(15.0),
@@ -30,19 +32,19 @@ class _LanguageIdentifierViewState extends State<LanguageIdentifierView> {
             controller: _controller,
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         _identifiedLanguage == ''
             ? Container()
             : Container(
-                margin: EdgeInsets.only(bottom: 5),
+                margin: const EdgeInsets.only(bottom: 5),
                 child: Text(
                   'Identified Language: $_identifiedLanguage',
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                 )),
         ElevatedButton(
             onPressed: _identifyLanguage,
             child: const Text('Identify Language')),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         ElevatedButton(
           onPressed: _identifyPossibleLanguages,
           child: const Text('Identify possible languages'),

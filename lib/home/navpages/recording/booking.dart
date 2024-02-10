@@ -78,7 +78,7 @@ class OrderTrackingPageState extends State<OrderTrackingPage> {
       // if (!mounted) return;
       setState(() {
         currentLatLng =
-            new LatLng(currLocation.latitude, currLocation.longitude);
+            LatLng(currLocation.latitude, currLocation.longitude);
         showSnackBar(context, currentLatLng.toString());
       });
     });

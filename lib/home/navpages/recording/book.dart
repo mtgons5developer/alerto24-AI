@@ -119,7 +119,7 @@ class OrderTrackingPageState extends State<OrderTrackingPage33> {
     Geolocator.getCurrentPosition().then((currLocation) {
       setState(() {
         currentLatLng =
-            new LatLng(currLocation.latitude, currLocation.longitude);
+            LatLng(currLocation.latitude, currLocation.longitude);
         v1 = LatLng(currLocation.latitude, currLocation.longitude);
       });
     });

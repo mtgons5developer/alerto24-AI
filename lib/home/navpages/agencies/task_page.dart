@@ -104,7 +104,7 @@ class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
             padding: const EdgeInsets.only(top: 20.0),
           ),
           // const Text(''),
-          Container(
+          SizedBox(
             // padding: const EdgeInsets.all(1),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height - 100,

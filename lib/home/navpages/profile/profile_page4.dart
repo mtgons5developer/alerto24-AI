@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -76,77 +74,63 @@ class _RegisterPageState extends State<ProfilePage2> {
 
         _subscription = dbRef2.child('first').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              firstNameController.value = firstNameController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            firstNameController.value = firstNameController.value.copyWith(
+              text: value,
+            );
+          });
+                });
 
         _subscription = dbRef2.child('middle').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              middleNameController.value = middleNameController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            middleNameController.value = middleNameController.value.copyWith(
+              text: value,
+            );
+          });
+                });
         _subscription = dbRef2.child('surname').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              surNameController.value = surNameController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            surNameController.value = surNameController.value.copyWith(
+              text: value,
+            );
+          });
+                });
         _subscription = dbRef2.child('bday').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              birthController.value = birthController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            birthController.value = birthController.value.copyWith(
+              text: value,
+            );
+          });
+                });
         _subscription = dbRef2.child('address').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              addressController.value = addressController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            addressController.value = addressController.value.copyWith(
+              text: value,
+            );
+          });
+                });
 
         _subscription = dbRef2.child('barangay').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              barangayController.value = barangayController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            barangayController.value = barangayController.value.copyWith(
+              text: value,
+            );
+          });
+                });
 
         _subscription = dbRef2.child('contactNum').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              contactNumController.value = contactNumController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            contactNumController.value = contactNumController.value.copyWith(
+              text: value,
+            );
+          });
+                });
 
         _subscription = dbRef2.child('sex').onValue.listen((data) {
           String value = data.snapshot.value as String;
@@ -169,14 +153,12 @@ class _RegisterPageState extends State<ProfilePage2> {
 
         _subscription = dbRef2.child('zipcode').onValue.listen((data) {
           String value = data.snapshot.value as String;
-          if (value != null) {
-            setState(() {
-              postalCodeController.value = postalCodeController.value.copyWith(
-                text: value,
-              );
-            });
-          }
-        });
+          setState(() {
+            postalCodeController.value = postalCodeController.value.copyWith(
+              text: value,
+            );
+          });
+                });
       }
     });
   }
@@ -252,7 +234,7 @@ class _RegisterPageState extends State<ProfilePage2> {
                               spreadRadius: 2,
                               blurRadius: 10,
                               color: Colors.black.withOpacity(0.1),
-                              offset: Offset(0, 10))
+                              offset: const Offset(0, 10))
                         ],
                         shape: BoxShape.circle,
                         image: DecorationImage(

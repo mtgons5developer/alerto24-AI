@@ -1,10 +1,7 @@
 // import 'package:alerto24/home/utils/showSnackBar.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:alerto24/home/Tiktok_videos.dart';
 import 'package:flutter/material.dart';
 import '../vdv/painters/face_detector_view.dart';
-import 'navpages/agencies/user_account.dart';
-import 'navpages/agencies/agency_account.dart';
 import 'navpages/homepage/home_page.dart';
 import 'navpages/profile/profile.dart';
 // import 'navpages/agencies/facepage.dart';
@@ -21,7 +18,7 @@ class _MainPageState extends State<MainPage> {
   List pages = [
     const HomePage(),
     // const USERHomePAGEWidget(),
-    FaceDetectorView(),
+    const FaceDetectorView(),
     // const AgencyHomePage(),
     const ProfilePage2()
   ];

@@ -70,8 +70,8 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   double _baseScale = 1.0;
   String agencyTypes = '0';
   Timer? countdownTimer;
-  static final _timer = 5;
-  Duration myDuration = Duration(seconds: _timer);
+  static const _timer = 5;
+  Duration myDuration = const Duration(seconds: _timer);
 
   // Counting pointers (number of user fingers on screen)
   int _pointers = 0;
@@ -532,7 +532,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       startVideoRecording(); //dudu
       startTimer();
       timer = Timer(
-        Duration(seconds: _timer),
+        const Duration(seconds: _timer),
         () {
           onStopButtonPressed();
         },
@@ -540,7 +540,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       setState(() {
         videoController?.dispose();
         videoController = null;
-        myDuration = Duration(seconds: _timer);
+        myDuration = const Duration(seconds: _timer);
       });
     }
   }

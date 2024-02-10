@@ -1,6 +1,5 @@
 import 'package:alerto24/home/utils/action_button.dart';
 import 'package:alerto24/home/utils/expandable_fab.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/src/widgets/container.dart';
 // import 'package:flutter/src/widgets/framework.dart';
@@ -16,7 +15,7 @@ class TikTokVideos2 extends StatefulWidget {
 class _TikTokVideosState extends State<TikTokVideos2> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 650,
       child: PageView.builder(
           scrollDirection: Axis.vertical,

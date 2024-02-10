@@ -47,6 +47,7 @@ class _RegisterPageState extends State<RegisterPage3> {
     }
   }
 
+  @override
   Widget build(BuildContext context) => WillPopScope(
       onWillPop: () async {
         return true;

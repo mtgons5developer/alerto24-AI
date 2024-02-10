@@ -63,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage3> {
         centerTitle: true,
         automaticallyImplyLeading: false,
         flexibleSpace: Container(),
-        title: Text(
+        title: const Text(
           "User Profile",
           style: TextStyle(color: Colors.black),
         ),

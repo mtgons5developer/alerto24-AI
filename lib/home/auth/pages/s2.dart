@@ -59,6 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) => WillPopScope(
         onWillPop: () async {
           return true;
@@ -83,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 spreadRadius: 2,
                                 blurRadius: 10,
                                 color: Colors.black.withOpacity(0.1),
-                                offset: Offset(0, 10))
+                                offset: const Offset(0, 10))
                           ],
                           shape: BoxShape.circle,
                           image: const DecorationImage(
@@ -164,7 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: GestureDetector(
                         onTap: signUpUser,
                         child: Container(
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: Colors.green[500],
                             borderRadius: BorderRadius.circular(12),
@@ -182,7 +183,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: GestureDetector(
@@ -216,9 +217,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
 //================================================================================
                     const SizedBox(height: 20),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
                           'I\'m already a Member.',
                           style: TextStyle(

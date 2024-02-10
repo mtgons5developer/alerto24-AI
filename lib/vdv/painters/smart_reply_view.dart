@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_smart_reply/google_mlkit_smart_reply.dart';
 
 class SmartReplyView extends StatefulWidget {
+  const SmartReplyView({super.key});
+
   @override
   State<SmartReplyView> createState() => _SmartReplyViewState();
 }
@@ -34,19 +36,19 @@ class _SmartReplyViewState extends State<SmartReplyView> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ListView(
               children: [
-                SizedBox(height: 30),
-                Text('Local User:'),
+                const SizedBox(height: 30),
+                const Text('Local User:'),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                         border: Border.all(
                       width: 2,
                     )),
                     child: TextField(
                       controller: _localUserController,
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration: const InputDecoration(border: InputBorder.none),
                       maxLines: null,
                     ),
                   ),
@@ -54,21 +56,21 @@ class _SmartReplyViewState extends State<SmartReplyView> {
                 Center(
                   child: ElevatedButton(
                       onPressed: () => _addMessage(_localUserController, true),
-                      child: Text('Add message to conversation')),
+                      child: const Text('Add message to conversation')),
                 ),
-                SizedBox(height: 30),
-                Text('Remote User:'),
+                const SizedBox(height: 30),
+                const Text('Remote User:'),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                         border: Border.all(
                       width: 2,
                     )),
                     child: TextField(
                       controller: _remoteUserController,
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration: const InputDecoration(border: InputBorder.none),
                       maxLines: null,
                     ),
                   ),
@@ -77,9 +79,9 @@ class _SmartReplyViewState extends State<SmartReplyView> {
                   child: ElevatedButton(
                       onPressed: () =>
                           _addMessage(_remoteUserController, false),
-                      child: Text('Add message to conversation')),
+                      child: const Text('Add message to conversation')),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -91,12 +93,12 @@ class _SmartReplyViewState extends State<SmartReplyView> {
                                 _suggestions = null;
                               });
                             },
-                            child: Text('Clear conversation')),
+                            child: const Text('Clear conversation')),
                       ElevatedButton(
                           onPressed: _suggestReplies,
-                          child: Text('Get Suggest Replies')),
+                          child: const Text('Get Suggest Replies')),
                     ]),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 if (_suggestions != null)
                   Text('Status: ${_suggestions!.status.name}'),
                 if (_suggestions != null &&
@@ -123,10 +125,10 @@ class _SmartReplyViewState extends State<SmartReplyView> {
       }
       controller.text = '';
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Message added to the conversation')));
+          const SnackBar(content: Text('Message added to the conversation')));
     } else {
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Message can\'t be empty')));
+          .showSnackBar(const SnackBar(content: Text('Message can\'t be empty')));
     }
   }
 

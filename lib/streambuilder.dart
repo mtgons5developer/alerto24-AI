@@ -10,7 +10,7 @@ import 'package:rxdart/rxdart.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: 'Geo Flutter Fire example',
     home: MyApp(),
     debugShowCheckedModeBanner: false,
@@ -18,6 +18,8 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -87,7 +89,7 @@ class _MyAppState extends State<MyApp> {
                   : () {
                       _showHome();
                     },
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
             )
           ],
         ),
@@ -98,7 +100,7 @@ class _MyAppState extends State<MyApp> {
               return const Center(child: CircularProgressIndicator());
             }));
           },
-          child: Icon(Icons.navigate_next),
+          child: const Icon(Icons.navigate_next),
         ),
         body: Container(
           child: Column(
@@ -107,7 +109,7 @@ class _MyAppState extends State<MyApp> {
               Center(
                 child: Card(
                   elevation: 4,
-                  margin: EdgeInsets.symmetric(vertical: 8),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
                   child: SizedBox(
                     width: mediaQuery.size.width - 30,
                     height: mediaQuery.size.height * (1 / 3),
@@ -138,7 +140,7 @@ class _MyAppState extends State<MyApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Container(
+                  SizedBox(
                     width: 100,
                     child: TextField(
                       controller: _latitudeController,
@@ -151,7 +153,7 @@ class _MyAppState extends State<MyApp> {
                           )),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: 100,
                     child: TextField(
                       controller: _longitudeController,
@@ -254,11 +256,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _updateMarkers(List<DocumentSnapshot> documentList) {
-    documentList.forEach((DocumentSnapshot document) {
+    for (var document in documentList) {
       final data = document.data() as Map<String, dynamic>;
       final GeoPoint point = data['position']['geopoint'];
       _addMarker(point.latitude, point.longitude);
-    });
+    }
   }
 
   double _value = 20.0;

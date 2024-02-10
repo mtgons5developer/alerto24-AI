@@ -4,6 +4,8 @@ import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:alerto24/vdv/painters/activity_indicator.dart';
 
 class LanguageTranslatorView extends StatefulWidget {
+  const LanguageTranslatorView({super.key});
+
   @override
   State<LanguageTranslatorView> createState() => _LanguageTranslatorViewState();
 }
@@ -36,20 +38,20 @@ class _LanguageTranslatorViewState extends State<LanguageTranslatorView> {
           },
           child: ListView(
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Center(
                   child: Text('Enter text (source: ${_sourceLanguage.name})')),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: BoxDecoration(
                       border: Border.all(
                     width: 2,
                   )),
                   child: TextField(
                     controller: _controller,
-                    decoration: InputDecoration(border: InputBorder.none),
+                    decoration: const InputDecoration(border: InputBorder.none),
                     maxLines: null,
                   ),
                 ),
@@ -57,57 +59,57 @@ class _LanguageTranslatorViewState extends State<LanguageTranslatorView> {
               Center(
                   child: Text(
                       'Translated Text (target: ${_targetLanguage.name})')),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
                     width: MediaQuery.of(context).size.width / 1.3,
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                         border: Border.all(
                       width: 2,
                     )),
                     child: Text(_translatedText ?? '')),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 ElevatedButton(
-                    onPressed: _translateText, child: Text('Translate'))
+                    onPressed: _translateText, child: const Text('Translate'))
               ]),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
                       onPressed: _downloadSourceModel,
-                      child: Text('Download Source Model')),
+                      child: const Text('Download Source Model')),
                   ElevatedButton(
                       onPressed: _downloadTargetModel,
-                      child: Text('Download Target Model')),
+                      child: const Text('Download Target Model')),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
                       onPressed: _deleteSourceModel,
-                      child: Text('Delete Source Model')),
+                      child: const Text('Delete Source Model')),
                   ElevatedButton(
                       onPressed: _deleteTargetModel,
-                      child: Text('Delete Target Model')),
+                      child: const Text('Delete Target Model')),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
                       onPressed: _isSourceModelDownloaded,
-                      child: Text('Source Downloaded?')),
+                      child: const Text('Source Downloaded?')),
                   ElevatedButton(
                       onPressed: _isTargetModelDownloaded,
-                      child: Text('Target Downloaded?')),
+                      child: const Text('Target Downloaded?')),
                 ],
               ),
             ],

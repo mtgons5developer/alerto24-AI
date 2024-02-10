@@ -4,6 +4,8 @@ import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.da
 import 'package:alerto24/vdv/painters/activity_indicator.dart';
 
 class EntityExtractionView extends StatefulWidget {
+  const EntityExtractionView({super.key});
+
   @override
   State<EntityExtractionView> createState() => _EntityExtractionViewState();
 }
@@ -43,14 +45,14 @@ class _EntityExtractionViewState extends State<EntityExtractionView> {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                         border: Border.all(
                       width: 2,
                     )),
                     child: TextField(
                       controller: _controller,
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration: const InputDecoration(border: InputBorder.none),
                       maxLines: null,
                     ),
                   ),
@@ -58,7 +60,7 @@ class _EntityExtractionViewState extends State<EntityExtractionView> {
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   ElevatedButton(
                       onPressed: _extractEntities,
-                      child: Text('Extract Entities'))
+                      child: const Text('Extract Entities'))
                 ]),
                 const SizedBox(height: 20),
                 Row(
@@ -66,18 +68,18 @@ class _EntityExtractionViewState extends State<EntityExtractionView> {
                   children: [
                     ElevatedButton(
                         onPressed: _downloadModel,
-                        child: Text('Download Model')),
+                        child: const Text('Download Model')),
                     ElevatedButton(
-                        onPressed: _deleteModel, child: Text('Delete Model')),
+                        onPressed: _deleteModel, child: const Text('Delete Model')),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       ElevatedButton(
                           onPressed: _isModelDownloaded,
-                          child: Text('Check download'))
+                          child: const Text('Check download'))
                     ]),
                 const SizedBox(
                   height: 30,
@@ -89,7 +91,7 @@ class _EntityExtractionViewState extends State<EntityExtractionView> {
                 ListView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: _entities.length,
                   itemBuilder: (context, index) => ExpansionTile(
                       title: Text(_entities[index].text),

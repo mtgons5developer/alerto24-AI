@@ -7,19 +7,21 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 750,
       child: PageView.builder(
           scrollDirection: Axis.vertical,
           itemCount: 5,
           itemBuilder: (context, position) {
-            return MyHomePage(); //_buildPageItem(position);
+            return const MyHomePage(); //_buildPageItem(position);
           }),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -31,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late PlayerState _playerState;
   late YoutubeMetaData _videoMetaData;
-  double _volume = 100;
-  bool _muted = false;
+  final double _volume = 100;
+  final bool _muted = false;
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
@@ -125,8 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(
           children: [
             player,
-            Padding(
-              padding: const EdgeInsets.all(0.0),
+            const Padding(
+              padding: EdgeInsets.all(0.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
               ),

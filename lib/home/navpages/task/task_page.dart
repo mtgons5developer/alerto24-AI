@@ -5,8 +5,6 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import '../../../utils/colors_utils.dart';
-import '../../utils/action_button.dart';
-import '../../utils/expandable_fab.dart';
 
 class TaskPage extends StatefulWidget {
   const TaskPage({Key? key}) : super(key: key);
@@ -30,7 +28,7 @@ class _FetchDataState extends State<TaskPage> {
 
   void initTimer() {
     _timeElapsed = 0;
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       _timeElapsed += 1; // +1
       print("Time Elapsed: (sec" + _timeElapsed.toString());
       if (_timeElapsed == 5) {
@@ -197,7 +195,7 @@ class _FetchDataState extends State<TaskPage> {
         //     },
         //   ),
         // ]),
-        body: Container(
+        body: SizedBox(
             height: double.infinity,
             child: FirebaseAnimatedList(
               query: dbRef,

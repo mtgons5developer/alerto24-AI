@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
 
 import 'package:alerto24/vdv/painters/entity_extraction_view.dart';
 import 'package:alerto24/vdv/painters/language_identifier_view.dart';
@@ -18,13 +17,15 @@ Future<void> main() async {
 
   cameras = await availableCameras();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
@@ -32,15 +33,17 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Google ML Kit Demo App'),
+        title: const Text('Google ML Kit Demo App'),
         centerTitle: true,
         elevation: 0,
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -48,7 +51,7 @@ class Home extends StatelessWidget {
               child: Column(
                 children: [
                   ExpansionTile(
-                    title: const Text('Vision APIs'),
+                    title: Text('Vision APIs'),
                     children: [
                       // CustomCard('Barcode Scanning', BarcodeScannerView()),
                       CustomCard('Face Detection', FaceDetectorView()),
@@ -64,7 +67,7 @@ class Home extends StatelessWidget {
                     height: 20,
                   ),
                   ExpansionTile(
-                    title: const Text('Natural Language APIs'),
+                    title: Text('Natural Language APIs'),
                     children: [
                       CustomCard('Language ID', LanguageIdentifierView()),
                       CustomCard(
@@ -88,24 +91,24 @@ class CustomCard extends StatelessWidget {
   final Widget _viewPage;
   final bool featureCompleted;
 
-  const CustomCard(this._label, this._viewPage, {this.featureCompleted = true});
+  const CustomCard(this._label, this._viewPage, {super.key, this.featureCompleted = true});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: ListTile(
         tileColor: Theme.of(context).primaryColor,
         title: Text(
           _label,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         onTap: () {
           if (!featureCompleted) {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content:
-                    const Text('This feature has not been implemented yet')));
+                    Text('This feature has not been implemented yet')));
           } else {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => _viewPage));

@@ -65,7 +65,7 @@ class _HelpPageState extends State<HelpPage> {
   Widget buildPage(String text) => Center(
         child: Text(
           text,
-          style: TextStyle(fontSize: 28),
+          style: const TextStyle(fontSize: 28),
         ),
       );
 }

@@ -183,7 +183,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
             agency
                 .doc('los_banos')
                 .collection('tasks')
-                .doc(currentUser!.uid)
+                .doc(currentUser.uid)
                 .update({
               "status": 1,
               "numOfDispatch": numOfDispatchTotal,
@@ -204,7 +204,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
             agency
                 .doc('los_banos')
                 .collection('tasks')
-                .doc(currentUser!.uid)
+                .doc(currentUser.uid)
                 .set({
               "status": 1,
               "numOfDispatch": numOfDispatchTotal,
@@ -239,7 +239,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
       body: SafeArea(
         child: Stack(
           children: [
-            Column(
+            const Column(
               mainAxisSize: MainAxisSize.max,
             ),
             Padding(
@@ -324,7 +324,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
                                             ],
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: Color(0xFFFF0000),
+                                              color: const Color(0xFFFF0000),
                                               width: 5,
                                             ),
                                           ),
@@ -420,7 +420,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
                                               ],
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                color: Color(0xFFFF0000),
+                                                color: const Color(0xFFFF0000),
                                                 width: 5,
                                               ),
                                             ),
@@ -518,7 +518,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
                                             ],
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: Color(0xFFFF0000),
+                                              color: const Color(0xFFFF0000),
                                               width: 5,
                                             ),
                                           ),
@@ -604,7 +604,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget34> {
                                               ],
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                color: Color(0xFFFF0000),
+                                                color: const Color(0xFFFF0000),
                                                 width: 5,
                                               ),
                                             ),

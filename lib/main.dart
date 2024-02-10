@@ -132,8 +132,8 @@ Future<String> downloadFileFromIPFS(String cid, String filePath) async {
 }
 
 void main() async {
-  final cid = 'QmRdWoUjyE7fRm6gnvHHwM7tA3hLuZFYeUJgQVb5bFZ64z';
-  final filePath = 'Downloads/';
+  const cid = 'QmRdWoUjyE7fRm6gnvHHwM7tA3hLuZFYeUJgQVb5bFZ64z';
+  const filePath = 'Downloads/';
   final filename = await downloadFileFromIPFS(cid, filePath);
   print('Downloaded file: $filename');
 }

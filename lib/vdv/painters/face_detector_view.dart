@@ -6,6 +6,8 @@ import 'package:alerto24/vdv/painters/camera_view.dart';
 import 'package:alerto24/vdv/painters/face_detector_painter.dart';
 
 class FaceDetectorView extends StatefulWidget {
+  const FaceDetectorView({super.key});
+
   @override
   State<FaceDetectorView> createState() => _FaceDetectorViewState();
 }

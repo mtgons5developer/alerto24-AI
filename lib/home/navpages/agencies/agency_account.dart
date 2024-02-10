@@ -63,8 +63,9 @@ class _AgencyHomePageState extends State<AgencyHomePage> {
           numOfCompletedTotal = querySnapshot['numOfCompleted'];
           if (numOfDispatchTotal > 0 ||
               numOfDispatchTotal >
-                  globals.counter1) if (globals.agencyEntry == 1)
-            Future(_showDialog);
+                  globals.counter1) if (globals.agencyEntry == 1) {
+                    Future(_showDialog);
+                  }
 
           setState(() {
             if (agencyTypes == '1') {
@@ -210,7 +211,7 @@ class _AgencyHomePageState extends State<AgencyHomePage> {
       body: SafeArea(
         child: Stack(
           children: [
-            Column(
+            const Column(
               mainAxisSize: MainAxisSize.max,
             ),
             Padding(
@@ -315,7 +316,7 @@ class _AgencyHomePageState extends State<AgencyHomePage> {
                                 ],
                                 shape: BoxShape.circle,
                                 border: Border.all(
-                                  color: Color(0xFFFF0000),
+                                  color: const Color(0xFFFF0000),
                                   width: 5,
                                 ),
                               ),

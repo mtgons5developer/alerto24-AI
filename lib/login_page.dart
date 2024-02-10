@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               signInWithGoogle();
             },
-            child: Text('Login with Google')),
+            child: const Text('Login with Google')),
       ),
     );
   }

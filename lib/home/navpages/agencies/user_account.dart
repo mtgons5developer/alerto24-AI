@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:alerto24/home/utils/showSnackBar.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ import '../../utils/action_button.dart';
 import '../../utils/expandable_fab.dart';
 import 'package:alerto24/globals.dart' as globals;
 
-import 'camera_page.dart';
 
 class USERHomePAGEWidget extends StatefulWidget {
   const USERHomePAGEWidget({Key? key}) : super(key: key);
@@ -245,7 +243,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget> {
       body: SafeArea(
         child: Stack(
           children: [
-            Column(
+            const Column(
               mainAxisSize: MainAxisSize.max,
             ),
             Padding(
@@ -336,7 +334,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget> {
                                             ],
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: Color(0xFFFF0000),
+                                              color: const Color(0xFFFF0000),
                                               width: 5,
                                             ),
                                           ),
@@ -427,7 +425,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget> {
                                               ],
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                color: Color(0xFFFF0000),
+                                                color: const Color(0xFFFF0000),
                                                 width: 5,
                                               ),
                                             ),
@@ -530,7 +528,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget> {
                                             ],
                                             shape: BoxShape.circle,
                                             border: Border.all(
-                                              color: Color(0xFFFF0000),
+                                              color: const Color(0xFFFF0000),
                                               width: 5,
                                             ),
                                           ),
@@ -621,7 +619,7 @@ class _USERHomePAGEWidgetState extends State<USERHomePAGEWidget> {
                                               ],
                                               shape: BoxShape.circle,
                                               border: Border.all(
-                                                color: Color(0xFFFF0000),
+                                                color: const Color(0xFFFF0000),
                                                 width: 5,
                                               ),
                                             ),
